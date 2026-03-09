@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BibliotecaColegio\BibliotecaColegio.csproj" />
+    <ProjectReference Include="..\ColegioWeb\BibliotecaColegio\BibliotecaColegio.csproj" />
   </ItemGroup>
 
 </Project>
