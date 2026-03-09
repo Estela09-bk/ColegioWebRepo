@@ -1,0 +1,60 @@
+﻿@using BibliotecaColegio.DTO
+@using BibliotecaColegio.Entities
+@model List<AlumnoDTO>
+
+@{
+    ViewData["Title"] = "Alumno";
+}
+
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+    }
+</style>
+
+<h2>Listado de alumnos</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Telefono</th>
+            <th>Correo electronico</th>
+            <th>Estatus</th>
+            <th>Fecha alta</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Count > 0)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.nombre</td>
+                    <td>@item.apellido</td>
+                    <td>@item.telefono</td>
+                    <td>@item.correo</td>
+                    <td>@item.status_alumno</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="6">No hay registros</td>
+            </tr>
+        }
+    </tbody>
+</table>

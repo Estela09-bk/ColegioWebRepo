@@ -1,0 +1,234 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #f0f4f8; /* Un gris un poco más azulado para diferenciarlo */
+            background-image: url('/img/fondo.png'); /*se agrego imagen, este es el lugar donde se debe agregar*/
+            background-size: cover; /*ajuste de imagen*/
+            background-attachment: scroll; /*movimiento de la imagen con el contenido*/
+        }
+
+        .contenedor {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* DOS COLUMNAS */
+            gap: 40px;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            gap: 35px;
+        }
+
+        .card {
+            width: 100%; /*tamaño de las tarjetas*/
+            border-radius: 8px;
+            padding: 22px 24px;
+        }
+
+            .card.1 {
+                background: #ffff;
+            }
+
+            .card.2 {
+                background: #ffbd66;
+                border: 2px solid #000; /*color*/
+                box-sizing: border-box;
+            }
+
+        .formbold-main-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 48px;
+        }
+
+        .formbold-form-wrapper {
+            margin: 0 auto;
+            max-width: 400px;
+            width: 100%;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08); /* Sombra un poco más profunda */
+
+            border-top: 35px solid #D1672E; /* Línea decorativa superior */
+        }
+
+        .formbold-form-title {
+            text-align: center;
+            color: #07074D;
+            margin-bottom: 5px;
+            font-size: 26px;
+            font-weight: 700;
+        }
+
+        .formbold-form-subtitle {
+            text-align: center;
+            color: #536387;
+            margin-bottom: 30px;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .formbold-input-group {
+            display: flex;
+            flex-direction: column-reverse;
+            margin-bottom: 22px;
+        }
+
+        .formbold-form-input {
+            width: 100%;
+            padding-bottom: 10px;
+            border: none;
+            border-bottom: 1px solid #DDE3EC;
+            background: transparent;
+            font-weight: 500;
+            font-size: 16px;
+            color: #07074D;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+            .formbold-form-input::placeholder {
+                color: #a0aabf;
+            }
+
+            .formbold-form-input:focus {
+                border-color: #4338ca; /* Azul oscuro institucional en lugar de morado */
+            }
+
+
+
+        .formbold-form-label {
+            color: #07074D;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 24px;
+            display: block;
+            margin-bottom: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .formbold-form-input:focus + .formbold-form-label {
+            color: #07074D;
+        }
+
+        .formbold-btn {
+            font-size: 16px;
+            border-radius: 5px;
+            padding: 12px 25px;
+            border: none;
+            font-weight: 600;
+            background-color: #4338ca; /* Azul institucional */
+
+            color: white;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .formbold-btn:hover {
+                background-color: #D754D9; /*Cambio de color de boton "sombra"*/
+                box-shadow: 0px 4px 10px rgba(67, 56, 202, 0.3);
+            }
+
+        
+    </style>
+</head>
+<body>
+
+    
+   <!-- <div class="formbold-main-wrapper">
+        <div class="formbold-form-wrapper">-->
+
+            <h2 class="formbold-form-title">COLEGIO</h2>
+            <p class="formbold-form-subtitle">Bienvenido</p>
+
+            @if (ViewBag.Error != null)
+
+            {
+                <div class="alerta-error">
+
+                    @ViewBag.Error
+                </div>
+
+            }
+            
+    <div class="formbold-main-wrapper">
+        <div class="formbold-form-wrapper">
+
+          <form action="/Home/Privacy" method="POST">
+            <div class="contenedor">
+                  <div class="card1">
+                       <div class="titulo">Alumno</div>
+
+                    <div class="formbold-input-group">
+                            <label>Servicio Preferido</label>
+                        <input type="text" name="NombreUser" id="NombreUser" placeholder="Ej. PROF-001" class="formbold-form-input" required autocomplete="off" />
+                        <label for="NombreUser" class="formbold-form-label"> CLAVE </label>
+                    </div>
+
+                    <div class="formbold-input-group">
+                        <input type="password" name="UserPassword" id="UserPassword" placeholder="••••••••" class="formbold-form-input" required />
+                        <label for="UserPassword" class="formbold-form-label"> Contraseña de acceso </label>
+                    </div>
+                  </div>
+            
+
+                     <div class="card2">
+                        <div class="formbold-main-wrapper">
+                          <div class="formbold-form-wrapper">
+
+                            <div class="titulo">Alumno</div>
+
+                            <div class="formbold-input-group">
+                                <input type="text" name="NombreUser" id="NombreUser" placeholder="Ej. PROF-001" class="formbold-form-input" required autocomplete="off" />
+                                <label for="NombreUser" class="formbold-form-label"> CLAVE </label>
+                            </div>
+
+                            <div class="formbold-input-group">
+                                <input type="password" name="UserPassword" id="UserPassword" placeholder="••••••••" class="formbold-form-input" required />
+                                <label for="UserPassword" class="formbold-form-label"> Contraseña de acceso </label>
+                            </div>
+                          </div>
+                        </div>
+                     </div>
+            </div>
+
+
+                <button type="submit" class="formbold-btn">
+
+                    ACCEDER
+                </button>
+
+          </form>
+        </div>
+    </div>
+</body>
+</html>
+

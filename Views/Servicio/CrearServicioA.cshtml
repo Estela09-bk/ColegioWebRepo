@@ -1,0 +1,171 @@
+﻿@{
+    ViewData["Title"] = "Servicio a Obtener";
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            background: #ffffff;
+            margin: 0;
+            padding: 40px;
+        }
+
+        h2 {
+            text-align: left;
+            margin-bottom: 25px;
+            font-size: 26px;
+        }
+
+        .contenedor {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* DOS COLUMNAS */
+            gap: 40px;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            gap: 35px;
+        }
+
+        .card {
+            width: 100%;
+            border-radius: 8px;
+            padding: 22px 24px;
+        }
+
+            .card.blanco {
+                background: #ffff;
+            }
+
+            .card.naranja {
+                background: #dd6666;
+                border: 2px solid #000;
+                box-sizing: border-box;
+            }
+
+        .titulo {
+            text-align: left;
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        .subtitulo {
+            text-align: left;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 25px;
+            font-size: 15px;
+        }
+
+            ul li {
+                margin-bottom: 8px;
+            }
+
+            ul div {
+                margin-top: 10px;
+                font-style: italic;
+                color: #555;
+            }
+
+        .formbold-form-input {
+            width: 50%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        /* Botón centrado */
+        .boton-container {
+            grid-column: 1 / -1; /* Ocupa todo el ancho */
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .btn-reinscripcion {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,123,255,0.3);
+            transition: all 0.3s ease;
+        }
+
+            .btn-reinscripcion:hover {
+                background-color: #0056b3;
+                transform: translateY(-2px);
+                box-shadow: 0 6px 15px rgba(0,123,255,0.4);
+            }
+
+            .btn-reinscripcion i {
+                margin-right: 10px;
+            }
+
+        /* Para el ícono si quieres usar Font Awesome */
+        .fas {
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+        }
+    </style>
+    <!-- Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <h2>Servicio a Obtener</h2>
+
+    <div class="contenedor">
+        <!-- Tarjeta Servicio Completo -->
+        <div class="card blanco">
+            <div class="titulo">Servicio Completo</div>
+            <div class="subtitulo">Periodo de Clases</div>
+            <ul>
+                <li>Inicio de Clases: 15 de Enero de 2025</li>
+                <li>Fin de Clases: 15 de Diciembre de 2025</li>
+                <li>(Incluye actividades vacacionales)</li>
+                <li>Acceso a todas las instalaciones</li>
+                <li>Material didáctico incluido</li>
+            </ul>
+        </div>
+
+        <!-- Tarjeta Servicio Ordinal -->
+        <div class="card naranja">
+            <div class="titulo">Servicio Ordinal</div>
+            <div class="subtitulo">Periodo de Clases</div>
+            <ul>
+                <li>Inicio de Clases: 15 de Enero de 2025</li>
+                <li>Fin de Clases: 15 de Diciembre de 2025</li>
+                <li>Clases los fines de semana</li>
+                <li>Material digital incluido</li>
+                <li>Horario flexible</li>
+            </ul>
+        </div>
+
+        <!-- Botón centrado entre las tarjetas -->
+        <div class="boton-container">
+            <button type="button" class="btn-reinscripcion" onclick="irAReinscripcion()">
+                <i class="fas fa-sync-alt"></i> Realizar Reinscripción
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function irAReinscripcion() {
+            // Redirigir a la página de reinscripción
+            window.location.href = '@Url.Action("ReinscripcionA", "Reinscripcion")';
+        }
+    </script>
+</body>
+</html>

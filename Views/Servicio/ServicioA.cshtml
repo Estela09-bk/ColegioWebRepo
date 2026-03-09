@@ -1,0 +1,141 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+    ViewData["Title"] = "Servicio";
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Servicios y Costos</title>
+
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            background: #ffffff;
+            margin: 0;
+            padding: 40px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 26px;
+        }
+
+        .contenedor {
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 340px;
+            border-radius: 8px;
+            padding: 22px 24px;
+            border: 2px solid #D236FE; /*color*/
+            box-sizing: border-box;
+        }
+
+            .card.gris {
+                background: #a9aaa3;
+            }
+
+            .card.blanco {
+                background: #fff;
+            }
+
+        .titulo {
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .subtitulo {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .horario {
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 25px;
+            font-size: 15px;
+        }
+
+            ul li {
+                margin-bottom: 8px;
+            }
+
+        .precio {
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .button {
+            background: #BA67E0;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            front-size: 16px;
+        }
+
+        .button {
+            background: #0056B3
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Servicios y costos</h2>
+
+    <div class="contenedor">
+
+          <div class="card gris">
+              <div class="titulo">Servicio completo</div>
+              <div class="subtitulo">(Anual)</div>
+              <div class="horario">Horario: 8:00 am - 7:00 pm</div>
+
+              <strong>Incluye:</strong>
+                <ul>
+                    <li>Clases ordinarias (8:00 am - 2:00 pm).</li>
+                    <li>Hora de comida: 2:00 pm - 4:00 pm.</li>
+                    <li>Clase de música: 4:00 pm - 5:00 pm.</li>
+                    <li>Clase de estudio: 5:30 pm - 7:00 pm.</li>
+                </ul>
+                <div class="precio">$2,350</div>
+          </div>
+
+          <div class="card blanco">
+                <div class="titulo">Servicio ordinal</div>
+                <div class="subtitulo">(Semestral)</div>
+                <div class="horario">Horario: 8:00 am - 7:00 pm</div>
+
+                <strong>Incluye:</strong>
+                <ul>
+                    <li>Clases ordinarias de 8:00 am - 2:00 pm con descanso de 10:30 am - 11:30 am.</li>
+                </ul>
+                <div class="precio">$1,350</div>
+            
+          </div>
+        <a href="/Servicio/CrearServicioA" class="princing-btn">Obtener</a>
+    </div>
+   
+</body>
+</html>

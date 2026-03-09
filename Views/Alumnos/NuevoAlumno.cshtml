@@ -1,0 +1,165 @@
+﻿
+@{
+    ViewData["Title"] = "Nuevo Alumno";
+}
+<!DOCTYPE html>
+<html lang="es">
+<style>
+    body {
+        font-family: "Segoe UI", Tahoma, sans-serif;
+        background: #ffffff;
+        margin: 0;
+        padding: 40px;
+    }
+
+    .nav-btn-logout{
+        text-align:center;
+        margin-bottom:30px;
+        font-size: 16px;
+        padding: 12px 25px;
+        font-weight: 600;
+        border-radius:5px;
+        background-color: gray; /* Color de boton */
+        
+        color: white;
+        cursor: pointer;
+        margin-top: 20px;
+        width: 100%;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+
+    h2 {
+        text-align: left;
+        margin-bottom: 25px;
+        font-size: 26px;
+    }
+          
+
+    .formbold-form-wrapper{
+      
+        border: 1px solid #59E0;
+        box-sizing: border-box;
+        margin: 0 auto;
+        max-width: 400px;
+        width: 100%;
+        background: white;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08); /* Sombra un poco más profunda */
+
+        border-top: 20px solid #D1672E; /* Línea decorativa superior */
+    }
+
+    .formbold-form-input {
+        width: 50%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .formbold-input-label {
+        width: 50%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .formbold-btn {
+        font-size: 16px;
+        border-radius: 5px;
+        padding: 12px 25px;
+        border: none;
+        font-weight: 600;
+        background-color: #D25BF0; /* Color de boton de ACCEDER */
+
+        color: white;
+        cursor: pointer;
+        margin-top: 20px;
+        width: 100%;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .formbold-btn:hover {
+            background-color: #B89f; /* Color de trancision de boton ACCEDER*/
+            box-shadow: 0px 4px 10px rgba(67, 56, 202, 0.3);
+        }
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    </head>
+    
+ <body>
+    <h2>Nuevo Alumno</h2>
+    <form action="/Alumnos/GuardarAlumno"method="POST">
+
+    
+         <div>
+           <a href="/Acceso/Index" class="nav-btn-logout">Cerrar Sesión</a>
+         </div>
+          
+         <div class="formbold-main-wrapper">
+         </div>
+
+
+        <div class="formbold-form-wrapper">
+         
+                    
+         <div class="form-grid">
+         </div>
+
+          <div class="formbold-input-group">
+             <label for="apellidos" class="formbold-form-label"> Apellidos </label>  <!--label es para describir lo que el usuario debe escribir, agregar -->
+             <input type="text"name="apellidos"id="apellidos"placeholder="Ej. Pérez Gómez"class="formbold-form-input"maxlength="55"required/> <!--lo que el usuario ingresa.-->
+                       
+          </div>
+          <p></p>
+
+          <div class="formbold-input-group">
+              <label for="nombre" class="formbold-form-label"> Nombre(s) </label>
+              <input type="text" name="nombre" id="nombre" placeholder="Ej. Estela" class="formbold-form-input" maxlength="55" required />
+                       
+          </div>
+            <p></p>
+
+          <div class="formbold-input-group">
+              <label for="Correo" class="formbold-form-label">Correo </label>
+              <input type="text" name="Correo" id="correo" placeholder="Ej. Estela@gmail.com" class="formbold-form-input" maxlength="60" required />
+
+          </div>
+            <p></p>
+
+          <div class="formbold-input-group">
+               <label for="telefono" class="formbold-form-label"> Tel. </label>  
+               <input type="text" name="telefono" id="telefono" placeholder="Ej. 985 456 7823" class="formbold-form-input" maxlength="25" pattern="[0-9]+" title="Solo ingresa números" required />
+
+          </div>
+            <p></p>
+
+          <div class="formbold-input-group">
+                <label for="fecha nacimiento" class="formbold-form-label"> Fecha de Nacimiento </label>
+                <input type="datetime-local" name="fecha_nacimiento" id="fecha_nacimiento" class="formbold-form-input" required />
+
+
+          </div>
+            <p></p>
+
+             <button type="submit" class="formbold-btn">
+
+                   Agregar
+             </button>
+
+        </div>
+        
+    </form>
+</body>
+</html>
+
+
+
+
